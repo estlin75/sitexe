@@ -4,12 +4,14 @@ import Lenis from 'lenis'
 
 export default function LenisProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
+    const isMobile = window.innerWidth < 768
+
     const lenis = new Lenis({
-      lerp: 0.08,
+      lerp: isMobile ? 0.1 : 0.08,
       wheelMultiplier: 1.1,
       smoothWheel: true,
-      touchMultiplier: 1.5,
-      syncTouch: true,
+      touchMultiplier: isMobile ? 1.0 : 1.5,
+      syncTouch: false,
       orientation: 'vertical',
       gestureOrientation: 'vertical',
     })

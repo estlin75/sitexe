@@ -1,6 +1,4 @@
-# TestForge - Elite Cyberpunk Landing Page 🚀
-
-Ekskluzywna wizytówka Agencji AI / Web Dev w stylu Awwwards, Matrix, Mr. Robot. Zbudowana w **2026 roku** na Next.js 15 (App Router), React 19, Tailwind v4 i React Three Fiber.
+# Sitexe 🚀
 
 ## 🔥 Stack technologiczny
 - Framework: Next.js 15 (App Router) + React 19

@@ -1,5 +1,5 @@
 "use client"
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { EffectComposer, Glitch, Bloom, ChromaticAberration } from "@react-three/postprocessing"
 import { Vector2 } from "three"
@@ -24,6 +24,20 @@ function CyberShape() {
 }
 
 export default function HeroCanvas() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
+  // Disable Canvas on mobile for performance
+  if (isMobile) {
+    return <div className="absolute inset-0 z-0" />
+  }
+
   return (
     <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
       <Canvas camera={{ position: [0, 0, 6] }}>

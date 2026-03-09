@@ -1,5 +1,4 @@
 "use client"
-import { useLenis } from "@/hooks/useLenis"
 import Navbar from "@/components/common/Navbar"
 import Footer from "@/components/common/Footer"
 import MatrixRain from "@/components/effects/MatrixRain"
@@ -13,8 +12,6 @@ import Testimonials from "@/components/sections/Testimonials"
 import Contact from "@/components/sections/Contact"
 
 export default function Home() {
-  useLenis()
-
   return (
     <main className="relative w-full overflow-hidden">
       <MatrixRain />

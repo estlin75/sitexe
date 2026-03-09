@@ -1,34 +1,31 @@
 "use client"
-import { useEffect } from 'react'
-import Lenis from 'lenis'
+import { useEffect, useState } from 'react'
+import type Lenis from 'lenis'
 
 export const useLenis = () => {
+  const [lenis, setLenis] = useState<Lenis | null>(null)
+
   useEffect(() => {
-    // ELITARNE USTAWIENIA (Awwwards Smoothness)
-    const lenis = new Lenis({
-      lerp: 0.08,             // 0.08 to idealny "złoty środek" masła i precyzji
-      wheelMultiplier: 1.1,   // Lekkie podbicie prędkości, żeby nie trzeba było machać rolką jak szalony
-      smoothWheel: true,      // Główny silnik gładkości dla myszek
-      touchMultiplier: 1.5,   // Telefony dotykowe potrzebują trochę więcej dynamiki
-      syncTouch: true,        // Synchronizuje fizyczny dotyk palca z renderowaniem klatek
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-    })
-
-    let animationFrameId: number;
-
-    // Zoptymalizowana pętla renderująca (używa wbudowanego czasu rAF dla max FPS)
-    function raf(time: number) {
-      lenis.raf(time)
-      animationFrameId = requestAnimationFrame(raf)
+    // Access the global Lenis instance from LenisProvider
+    const checkLenis = () => {
+      const globalLenis = (window as any).__lenis
+      if (globalLenis) {
+        setLenis(globalLenis)
+      }
     }
 
-    animationFrameId = requestAnimationFrame(raf)
+    // Check immediately and set up a short polling interval
+    checkLenis()
+    const interval = setInterval(checkLenis, 100)
 
-    // Czyste odpięcie przy zmianie podstrony / zamknięciu komponentu
+    // Clean up after 3 seconds
+    const timeout = setTimeout(() => clearInterval(interval), 3000)
+
     return () => {
-      cancelAnimationFrame(animationFrameId)
-      lenis.destroy()
+      clearInterval(interval)
+      clearTimeout(timeout)
     }
   }, [])
+
+  return lenis
 }

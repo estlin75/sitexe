@@ -4,6 +4,7 @@ import { JetBrains_Mono, Inter } from "next/font/google"
 import { Toaster } from "sonner"
 import { SITE_CONFIG } from "@/lib/constants"
 import { cn } from "@/lib/utils"
+import LenisProvider from "@/components/providers/LenisProvider"
 
 const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const fontMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
@@ -26,7 +27,9 @@ export default function RootLayout({
         fontSans.variable,
         fontMono.variable
       )}>
-        {children}
+        <LenisProvider>
+          {children}
+        </LenisProvider>
         <Toaster theme="dark" toastOptions={{ 
           className: 'bg-black border border-matrix text-matrix font-mono rounded-none',
           duration: 4000

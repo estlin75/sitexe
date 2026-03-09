@@ -1,12 +1,20 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
-    if (!canvas) return
+    if (!canvas || isMobile) return // Disable on mobile
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
@@ -52,7 +60,7 @@ export default function MatrixRain() {
       clearInterval(interval)
       window.removeEventListener("resize", handleResize)
     }
-  }, [])
+  }, [isMobile])
 
   return (
     <canvas 

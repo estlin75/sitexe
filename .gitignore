@@ -1,41 +1,91 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage / Test reports
+coverage
+.nyc_output
+*.lcov
+
+# Dependency directories
+node_modules/
+jspm_packages/
+web_modules/
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+.cache/
+
+# Next.js specific
+.next/cache/
+.next/static/chunks/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# TypeScript / Build artifacts
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel / Deployment
+.vercel
+.vercel_build_output
+.vercel_cache
+
+# Parcel / Vite / Snowpack cache
+.cache/
+.parcel-cache/
+.vite/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
+# Yarn v2/v3 specific (if you use Yarn Berry)
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
+!.yarn/sdks
 !.yarn/versions
+.pnp.*
 
-# testing
-/coverage
+# Optional: ignore lockfiles if you regenerate them often
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Optional: ignore large media / assets if not in git
+# public/large-files/*

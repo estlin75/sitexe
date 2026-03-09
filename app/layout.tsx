@@ -1,0 +1,37 @@
+import "./globals.css"
+import type { Metadata } from "next"
+import { JetBrains_Mono, Inter } from "next/font/google"
+import { Toaster } from "sonner"
+import { SITE_CONFIG } from "@/lib/constants"
+import { cn } from "@/lib/utils"
+
+const fontSans = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const fontMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
+
+export const metadata: Metadata = {
+  title: `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`,
+  description: SITE_CONFIG.description,
+  themeColor: "#050505",
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="pl" className="dark">
+      <body className={cn(
+        "min-h-screen bg-cyber-dark font-sans antialiased scanlines",
+        fontSans.variable,
+        fontMono.variable
+      )}>
+        {children}
+        <Toaster theme="dark" toastOptions={{ 
+          className: 'bg-black border border-matrix text-matrix font-mono rounded-none',
+          duration: 4000
+        }} />
+      </body>
+    </html>
+  )
+}

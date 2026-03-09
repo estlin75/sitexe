@@ -1,9 +1,18 @@
 "use client"
 import { motion } from "motion/react"
+import { useState, useEffect } from "react"
 import { PROJECTS } from "@/lib/constants"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
 
 export default function Portfolio() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
   return (
     <section id="portfolio" className="relative w-full py-32 bg-black">
       <div className="container mx-auto px-6">
@@ -56,16 +65,18 @@ export default function Portfolio() {
                   </h2>
                 </div>
                 
-                {/* 2. STAN HOVER: Żywy Iframe (pojawia się z pod spodu) */}
-                <div className="absolute inset-0 z-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
-                  <div className="absolute inset-0 bg-cyan/10 mix-blend-color z-10 pointer-events-none" />
-                  <iframe
-                    src={project.link}
-                    loading="lazy"
-                    tabIndex={-1}
-                    className="absolute top-0 left-0 w-[300%] h-[300%] origin-top-left scale-[0.333333] border-none pointer-events-none"
-                  />
-                </div>
+                {/* 2. STAN HOVER: Żywy Iframe (pojawia się z pod spodu) - Only on desktop */}
+                {!isMobile && (
+                  <div className="absolute inset-0 z-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                    <div className="absolute inset-0 bg-cyan/10 mix-blend-color z-10 pointer-events-none" />
+                    <iframe
+                      src={project.link}
+                      loading="lazy"
+                      tabIndex={-1}
+                      className="absolute top-0 left-0 w-[300%] h-[300%] origin-top-left scale-[0.333333] border-none pointer-events-none"
+                    />
+                  </div>
+                )}
                 
                 {/* 3. Ciemny gradient na dole (aby dolne teksty zawsze były czytelne) */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-all duration-500" />

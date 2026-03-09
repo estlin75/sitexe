@@ -28,6 +28,20 @@
     overflow-x: hidden;
     overscroll-behavior-y: none; /* Prevent pull-to-refresh on mobile */
     touch-action: pan-y; /* Allow only vertical scrolling on touch */
+    -webkit-user-select: none; /* Prevent text selection on mobile */
+    user-select: none;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
+  }
+
+  /* Allow text selection only on specific elements */
+  input, textarea, [contenteditable] {
+    -webkit-user-select: auto;
+    user-select: auto;
+  }
+
+  /* Prevent double-tap zoom on links and buttons */
+  a, button {
+    touch-action: manipulation;
   }
 
   ::selection {
@@ -74,7 +88,24 @@
   background: #050505;
   border: 1px solid rgba(0, 255, 159, 0.2);
 }
-.hacker-border:hover {
-  border-color: #00ff9f;
-  box-shadow: 0 0 20px rgba(0, 255, 159, 0.2);
+
+/* Hover effects only on devices that support hover (desktop) */
+@media (hover: hover) {
+  .hacker-border:hover {
+    border-color: #00ff9f;
+    box-shadow: 0 0 20px rgba(0, 255, 159, 0.2);
+  }
+}
+
+/* Mobile-specific: Disable hover effects */
+@media (hover: none) {
+  /* Disable all hover pseudo-classes on touch devices */
+  * {
+    pointer-events: auto !important;
+  }
+  
+  /* Prevent hover states from being triggered by touch */
+  .group:hover > * {
+    /* Keep default state, don't apply hover transformations */
+  }
 }

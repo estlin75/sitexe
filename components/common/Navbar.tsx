@@ -74,7 +74,7 @@ export default function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden font-mono text-matrix border border-matrix px-3 py-1 text-sm hover:bg-matrix hover:text-black transition-colors"
         >
-          {isOpen ? "[ CLOSE ]" : "[ MENU ]"}
+          {isOpen ? "[ ZAMKNIJ ]" : "[ MENU ]"}
         </button>
       </div>
 
@@ -103,7 +103,7 @@ export default function Navbar() {
             ))}
             
             <div className="mt-10 font-mono text-xs text-matrix opacity-50 animate-pulse">
-              // SYSTEM.WAITING_FOR_INPUT_
+              // SYSTEM.OCZEKUJE_NA_DANE_
             </div>
           </motion.div>
         )}

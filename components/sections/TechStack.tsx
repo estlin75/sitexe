@@ -9,7 +9,7 @@ export default function TechStack() {
     <section id="tech" className="w-full py-20 bg-[#030303] border-y border-matrix/10 overflow-hidden">
       <div className="container mx-auto px-6 mb-10">
         <h2 className="font-mono text-sm text-gray-500 uppercase tracking-widest text-center">
-          [ Supported Technologies ]
+          [ Obslugiwane Technologie ]
         </h2>
       </div>
       

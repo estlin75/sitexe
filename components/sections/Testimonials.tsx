@@ -11,7 +11,7 @@ export default function Testimonials() {
     <section className="w-full py-24 bg-[#030303]">
       <div className="container mx-auto px-6">
         <h2 className="font-mono text-matrix text-sm mb-12 uppercase tracking-widest text-center">
-          /// Intercepted_Transmissions (Klient Feedback)
+          /// Przechwycone_Opinie (Feedback Klientow)
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -23,7 +23,7 @@ export default function Testimonials() {
               viewport={{ once: true }}
               className="p-6 border border-gray-800 bg-black/50 backdrop-blur-sm relative"
             >
-              <div className="absolute top-2 right-2 text-gray-800 text-xs font-mono">ENCRYPTED</div>
+              <div className="absolute top-2 right-2 text-gray-800 text-xs font-mono">ZASZYFROWANE</div>
               <p className="font-mono text-gray-300 text-sm mb-4 leading-relaxed italic">
                 "{rev.text}"
               </p>

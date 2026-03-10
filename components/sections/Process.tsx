@@ -1,32 +1,36 @@
 "use client"
 import { motion } from "motion/react"
-
-const STEPS = [
-  { num: "01", title: "RECONNAISSANCE", desc: "Analiza wymagań, mapowanie architektury i dobór stacku." },
-  { num: "02", title: "PROTOTYPING", desc: "Tworzenie wireframe'ów i interaktywnych modeli UI/UX w oparciu o Three.js." },
-  { num: "03", title: "EXECUTION", desc: "Czyste kodowanie, integracja AI, budowa backendu" },
-  { num: "04", title: "DEPLOYMENT", desc: "Testy penetracyjne, CI/CD, uruchomienie na globalnej infrastrukturze AWS/Vercel." },
-]
+import { PROCESS_STEPS, PAYMENT_TERMS } from "@/lib/constants"
+import { fadeInUp, staggerContainer } from "@/lib/animations"
 
 export default function Process() {
   return (
     <section className="w-full py-32 bg-black border-y border-matrix/10">
       <div className="container mx-auto px-6">
-        <div className="mb-16 text-center">
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-16 text-center"
+        >
           <h2 className="font-mono text-3xl md:text-4xl text-white font-bold mb-4">
-            [ OPERATIONAL_WORKFLOW ]
+            [ PRZEBIEG_WSPOLPRACY ]
           </h2>
           <p className="font-mono text-gray-500 text-sm">Protokół realizacji projektów zdefiniowany krok po kroku.</p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {STEPS.map((step, i) => (
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8"
+        >
+          {PROCESS_STEPS.map((step, i) => (
             <motion.div 
               key={step.num}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              variants={fadeInUp}
               className="relative"
             >
               <div className="font-mono text-5xl font-black text-white/5 mb-4">{step.num}</div>
@@ -42,8 +46,29 @@ export default function Process() {
               <p className="text-sm text-gray-400 leading-relaxed font-sans">{step.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-14"
+        >
+          <div className="hacker-border box-glow-cyan bg-cyan/5 p-6 md:p-8">
+            <div className="font-mono text-xs text-cyan mb-3">[ BEZPIECZNY_MODEL_PLATNOSCI ]</div>
+            <div className="font-mono text-2xl md:text-3xl font-bold text-white leading-tight">
+              {PAYMENT_TERMS.upfront}
+              <span className="text-cyan"> / </span>
+              {PAYMENT_TERMS.final}
+            </div>
+            <p className="mt-4 text-sm text-gray-300 font-mono">
+              Transparentny model rozliczenia: start projektu jest aktywowany po 20%, a finalna platnosc nastepuje dopiero po pelnej akceptacji.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
 }
+

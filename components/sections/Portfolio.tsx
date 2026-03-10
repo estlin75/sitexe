@@ -25,7 +25,7 @@ export default function Portfolio() {
         >
           <div>
             <h2 className="font-mono text-3xl md:text-4xl text-white font-bold">
-              <span className="text-cyan">SYS.</span>GET_ARCHIVES()
+              <span className="text-cyan">SYS.</span>POBIERZ_REALIZACJE()
             </h2>
             <div className="w-24 h-1 bg-cyan mt-4 box-glow-cyan" />
           </div>
@@ -42,8 +42,8 @@ export default function Portfolio() {
           className="grid grid-cols-1 md:grid-cols-2 gap-10"
         >
           {PROJECTS.map((project, index) => {
-            // Czysta nazwa do wielkiej typografii (usuwamy prefix "Project: ")
-            const cleanTitle = project.title.replace("Project: ", "")
+            // Czysta nazwa do wielkiej typografii (usuwamy prefix "Projekt: ")
+            const cleanTitle = project.title.replace("Projekt: ", "")
 
             return (
               <motion.a
@@ -89,7 +89,7 @@ export default function Portfolio() {
                       <h3 className="font-bold text-2xl text-white group-hover:text-glow-cyan transition-all">{project.title}</h3>
                     </div>
                     <div className="font-mono text-matrix opacity-0 group-hover:opacity-100 transition-opacity">
-                      [ EXECUTE ]
+                      [ OTWORZ ]
                     </div>
                   </div>
                 </div>

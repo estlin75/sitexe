@@ -21,15 +21,15 @@ export default function WhyUs() {
           
           {/* Terminal Body */}
           <div className="p-6 font-mono text-sm md:text-base leading-relaxed text-gray-300">
-            <p className="mb-4"><span className="text-matrix">user:~$</span> cat why_choose_us.txt</p>
-            <p className="mb-2 text-cyan">1. ZERO_BULLSHIT_POLICY</p>
-            <p className="mb-4 pl-4 text-gray-500">Dostarczamy czysty, zoptymalizowany kod. Żadnych pre-gotowych szablonów z WP, tylko surowy performance.</p>
+            <p className="mb-4"><span className="text-matrix">user:~$</span> cat dlaczego_my.txt</p>
+            <p className="mb-2 text-cyan">1. ZERO_SCHEMATOW</p>
+            <p className="mb-4 pl-4 text-gray-500">Dostarczamy czysty i zoptymalizowany kod. Bez gotowych szablonow, tylko wydajne rozwiazania tworzone pod klienta.</p>
             
-            <p className="mb-2 text-cyan">2. AI_DRIVEN_DEVELOPMENT</p>
-            <p className="mb-4 pl-4 text-gray-500">Korzystamy z najnowszych modeli LLM aby przyspieszyć proces tworzenia o 400% i dowozić projekty przed czasem.</p>
+            <p className="mb-2 text-cyan">2. SPRAWNA_REALIZACJA</p>
+            <p className="mb-4 pl-4 text-gray-500">Pracujemy szybko i metodycznie, dlatego dostarczamy projekty w krotkim czasie bez kompromisow dla jakosci.</p>
             
-            <p className="mb-2 text-cyan">3. ELITE_SECURITY</p>
-            <p className="mb-4 pl-4 text-gray-500">Nasze aplikacje są zabezpieczone zgodnie z aktualnymi standardami branżowymi.</p>
+            <p className="mb-2 text-cyan">3. STABILNOSC_I_BEZPIECZENSTWO</p>
+            <p className="mb-4 pl-4 text-gray-500">Nasze strony i aplikacje wdrazamy zgodnie z aktualnymi standardami bezpieczenstwa i praktykami produkcyjnymi.</p>
             
             <p className="mt-6 animate-pulse"><span className="text-matrix">user:~$</span> _</p>
           </div>

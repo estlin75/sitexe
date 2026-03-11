@@ -1,13 +1,20 @@
 "use client"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { useLenis } from "lenis/react" // <-- Dodany import
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants"
+
+type WindowWithLenis = Window & {
+  __lenis?: any
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const lenis = useLenis() // <-- Inicjalizacja Lenis
+  const [lenis, setLenis] = useState<any>(null)
+
+  useEffect(() => {
+    setLenis((window as WindowWithLenis).__lenis)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -31,7 +38,7 @@ export default function Navbar() {
       if (lenis) {
         lenis.scrollTo(href, {
           duration: 1.5,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
           immediate: false,
         });
       } else {

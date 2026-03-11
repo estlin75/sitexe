@@ -11,11 +11,12 @@ export default function LenisProvider({ children }: { children: ReactNode }) {
     const isMobile = window.innerWidth < 768
 
     const lenis = new Lenis({
-      lerp: isMobile ? 0.1 : 0.08,
-      wheelMultiplier: 1.1,
+      lerp: 0.1,
+      wheelMultiplier: 1.0,
       smoothWheel: true,
-      touchMultiplier: isMobile ? 1.0 : 1.5,
-      syncTouch: false,
+      touchMultiplier: 1.2,
+      syncTouch: true,
+      autoRaf: false,
       orientation: 'vertical',
       gestureOrientation: 'vertical',
     })

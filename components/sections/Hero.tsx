@@ -37,7 +37,7 @@ export default function Hero() {
           className="font-mono text-gray-400 max-w-2xl text-sm md:text-base mb-10 leading-relaxed"
         >
           {"// "}{SITE_CONFIG.tagline} <br/>
-          Tworzymy aplikacje internetowe – od prostych stron firmowych i wizytówek po skalowalne systemy SaaS i rozwiązania AI.
+          Tworzymy strony, aplikacje webowe i mobilne (iOS &amp; Android) – od prostych wizytówek po skalowalne systemy SaaS i rozwiązania AI.
         </motion.p>
         
         <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-6">
@@ -45,10 +45,29 @@ export default function Hero() {
           <NeonGlitchCTA text="ZOBACZ_PORTFOLIO" href="#portfolio" color="cyan" />
         </motion.div>
       </motion.div>
+
+      {/* Data Stream Effect - Animated background data flows */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+        <div className="absolute top-1/4 left-1/4 font-mono text-xs text-matrix animate-data-stream">
+          &gt; INITIALIZING_NEURAL_NETWORK...
+        </div>
+        <div className="absolute top-1/3 right-1/4 font-mono text-xs text-cyan animate-data-stream" style={{ animationDelay: "1s" }}>
+          &lt; LOADING_CORE_SYSTEMS...
+        </div>
+        <div className="absolute bottom-1/3 left-1/3 font-mono text-xs text-matrix/50 animate-data-stream" style={{ animationDelay: "2s" }}>
+          &gt; SYNC_STATUS: 99.7%
+        </div>
+        <div className="absolute bottom-1/4 right-1/3 font-mono text-xs text-cyan/50 animate-data-stream" style={{ animationDelay: "1.5s" }}>
+          &lt; EXECUTING_PROTOCOLS...
+        </div>
+      </div>
       
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 font-mono text-xs text-gray-600 animate-bounce">
         PRZEWIŃ_W_DÓŁ [↓]
       </div>
+
+      {/* Smooth fade gradient transition - MatrixRain gracefully fades to background */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-black/20 to-black pointer-events-none" />
     </section>
   )
 }

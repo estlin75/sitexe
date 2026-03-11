@@ -56,18 +56,26 @@
 }
 
 .text-glow-matrix {
-  text-shadow: 0 0 10px rgba(0, 255, 159, 0.7), 0 0 20px rgba(0, 255, 159, 0.5);
+  text-shadow: 0 0 15px rgba(0, 255, 159, 0.9), 0 0 30px rgba(0, 255, 159, 0.6), 0 0 45px rgba(0, 255, 159, 0.3);
 }
 
 .text-glow-cyan {
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.5);
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.9), 0 0 30px rgba(0, 240, 255, 0.6), 0 0 45px rgba(0, 240, 255, 0.3);
 }
 
 .box-glow-cyan {
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.1);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5), inset 0 0 15px rgba(0, 240, 255, 0.15);
 }
 
-/* Scanline Overlay */
+.text-glow-magenta {
+  text-shadow: 0 0 15px rgba(255, 0, 170, 0.9), 0 0 30px rgba(255, 0, 170, 0.6), 0 0 45px rgba(255, 0, 170, 0.3);
+}
+
+.box-glow-magenta {
+  box-shadow: 0 0 25px rgba(255, 0, 170, 0.5), inset 0 0 15px rgba(255, 0, 170, 0.15);
+}
+
+/* Scanline Overlay - Enhanced Hacker Effect */
 .scanlines::before {
   content: " ";
   display: block;
@@ -76,10 +84,11 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.08), rgba(0, 255, 0, 0.04), rgba(0, 0, 255, 0.08));
   z-index: 50;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
+  will-change: auto;
 }
 
 /* Animated Gradient Border */
@@ -107,5 +116,159 @@
   /* Prevent hover states from being triggered by touch */
   .group:hover > * {
     /* Keep default state, don't apply hover transformations */
+  }
+}
+
+/* Advanced Cyberpunk Effects */
+
+/* Enhanced glow filters for WebGL integration */
+@supports (filter: drop-shadow(0 0 20px rgba(0, 255, 159, 0.8))) {
+  .glow-matrix-intense {
+    filter: drop-shadow(0 0 20px rgba(0, 255, 159, 0.6)) drop-shadow(0 0 40px rgba(0, 255, 159, 0.3));
+  }
+  
+  .glow-cyan-intense {
+    filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.6)) drop-shadow(0 0 40px rgba(0, 240, 255, 0.3));
+  }
+}
+
+/* Data stream animation */
+@keyframes dataStream {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.animate-data-stream {
+  animation: dataStream 3s linear infinite;
+}
+
+/* Glitch effect - triple layer */
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: 
+      0 0 0 rgba(0, 255, 159, 0),
+      0 0 0 rgba(0, 240, 255, 0);
+  }
+  20% {
+    text-shadow: 
+      -2px 0 #00ff9f,
+      2px 0 #00f0ff;
+  }
+  40% {
+    text-shadow: 
+      -2px 0 rgba(0, 255, 159, 0.5),
+      2px 0 rgba(0, 240, 255, 0.5);
+  }
+  60% {
+    text-shadow: 
+      3px 0 #00f0ff,
+      -3px 0 #00ff9f;
+  }
+  80% {
+    text-shadow: 
+      2px 0 rgba(0, 240, 255, 0.3);
+  }
+}
+
+.animate-glitch-intense {
+  animation: glitch 2s infinite;
+}
+
+/* Shake/jitter effect on hover */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-1px); }
+  75% { transform: translateX(1px); }
+}
+
+@media (hover: hover) {
+  .hover-glitch:hover {
+    animation: shake 0.2s;
+  }
+}
+
+/* Code-like visual element - typing effect */
+@keyframes typing {
+  0% {
+    width: 0;
+    border-right: 2px solid rgba(0, 255, 159, 0.8);
+  }
+  50% {
+    border-right-color: transparent;
+  }
+  100% {
+    width: 100%;
+    border-right: 2px solid rgba(0, 255, 159, 0.8);
+  }
+}
+
+.animate-code-typing {
+  animation: typing 4s steps(40, end) infinite;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: monospace;
+  border-right: 2px solid rgba(0, 255, 159, 0.8);
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 159, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 25px rgba(0, 255, 159, 0.8));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Neural network connection animation */
+@keyframes neural-pulse {
+  0%, 100% {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.neural-line {
+  animation: neural-pulse 3s ease-in-out infinite;
+}
+
+/* CRT effect - subtle horizontal shifts */
+@keyframes crt-shift {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(1px);
+  }
+  50% {
+    transform: translateX(-1px);
+  }
+  75% {
+    transform: translateX(0.5px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.enable-crt {
+    animation: crt-shift 0.1s infinite;
   }
 }

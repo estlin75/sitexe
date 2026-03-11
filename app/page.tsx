@@ -8,7 +8,7 @@ import TechStack from "@/components/sections/TechStack"
 import Portfolio from "@/components/sections/Portfolio"
 import WhyUs from "@/components/sections/WhyUs"
 import Process from "@/components/sections/Process"
-import Testimonials from "@/components/sections/Testimonials"
+// import Testimonials from "@/components/sections/Testimonials"
 import Contact from "@/components/sections/Contact"
 
 export default function Home() {
@@ -24,7 +24,6 @@ export default function Home() {
         <Portfolio />
         <WhyUs />
         <Process />
-        <Testimonials />
         <Contact />
       </div>
 

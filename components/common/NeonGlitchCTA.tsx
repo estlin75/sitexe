@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "motion/react"
-import { useLenis } from "lenis/react"
+import { useLenis } from "@/hooks/useLenis"
 import { glitchAnimation } from "../../lib/animations"
 
 interface Props {

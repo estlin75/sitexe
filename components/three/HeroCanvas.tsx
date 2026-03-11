@@ -121,6 +121,9 @@ export default function HeroCanvas() {
   const [showToast, setShowToast] = useState(false)
 
   useEffect(() => {
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+    if (isMobile) return
+
     detectHardwareAcceleration().then((result) => {
       setHasHardwareAccel(result)
       if (!result) setShowToast(true)

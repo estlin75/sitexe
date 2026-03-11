@@ -1,10 +1,10 @@
 "use client"
 import { motion } from "motion/react"
-import { Globe, Smartphone, CreditCard, Database, Server, Palette } from "lucide-react"
+import { Globe, Smartphone, CreditCard, Database, Server, Palette, type LucideIcon } from "lucide-react"
 import { SERVICES } from "@/lib/constants"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
 
-const icons: Record<string, any> = { Globe, Smartphone, CreditCard, Database, Server, Palette }
+const icons: Record<string, LucideIcon> = { Globe, Smartphone, CreditCard, Database, Server, Palette }
 
 export default function Services() {
   const coreServices = SERVICES.find((group) => group.group === "CORE_SERVICES")?.items ?? []

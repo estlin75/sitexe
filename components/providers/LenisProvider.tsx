@@ -2,6 +2,10 @@
 import { useEffect, ReactNode } from 'react'
 import Lenis from 'lenis'
 
+type WindowWithLenis = Window & {
+  __lenis?: Lenis
+}
+
 export default function LenisProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const isMobile = window.innerWidth < 768
@@ -17,7 +21,7 @@ export default function LenisProvider({ children }: { children: ReactNode }) {
     })
 
     // Store Lenis instance globally for other components to access
-    ;(window as any).__lenis = lenis
+    ;(window as WindowWithLenis).__lenis = lenis
 
     let animationFrameId: number
 
@@ -31,7 +35,7 @@ export default function LenisProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelAnimationFrame(animationFrameId)
       lenis.destroy()
-      delete (window as any).__lenis
+      delete (window as WindowWithLenis).__lenis
     }
   }, [])
 

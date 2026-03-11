@@ -15,6 +15,10 @@ export default function MatrixRain() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas || isMobile) return // Disable on mobile
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (prefersReducedMotion) return
+
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
@@ -23,7 +27,8 @@ export default function MatrixRain() {
 
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~".split("")
     const fontSize = 14
-    const columns = canvas.width / fontSize
+    const columnSpacing = 2
+    const columns = Math.floor(canvas.width / (fontSize * columnSpacing))
     const drops: number[] = []
 
     for (let x = 0; x < columns; x++) {
@@ -39,16 +44,16 @@ export default function MatrixRain() {
 
       for (let i = 0; i < drops.length; i++) {
         const text = chars[Math.floor(Math.random() * chars.length)]
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize)
+        ctx.fillText(text, i * fontSize * columnSpacing, drops[i] * fontSize)
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.98) {
           drops[i] = 0
         }
         drops[i]++
       }
     }
 
-    const interval = setInterval(draw, 33)
+    const interval = setInterval(draw, 45)
 
     const handleResize = () => {
       canvas.width = window.innerWidth
@@ -65,7 +70,7 @@ export default function MatrixRain() {
   return (
     <canvas 
       ref={canvasRef} 
-      className="fixed inset-0 z-0 opacity-20 pointer-events-none"
+      className="fixed inset-0 z-0 opacity-15 pointer-events-none"
     />
   )
 }

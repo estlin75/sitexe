@@ -14,10 +14,10 @@ export default function Process() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16 text-center"
         >
-          <h2 className="font-mono text-3xl md:text-4xl text-white font-bold mb-4">
+          <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl text-white font-bold mb-4 whitespace-nowrap [text-shadow:0_0_10px_rgba(255,255,255,0.22)]">
             [ PRZEBIEG_WSPOLPRACY ]
           </h2>
-          <p className="font-mono text-gray-500 text-sm">Protokół realizacji projektów zdefiniowany krok po kroku.</p>
+          <p className="font-mono text-gray-300 text-sm">Protokół realizacji projektów zdefiniowany krok po kroku.</p>
         </motion.div>
 
         <motion.div
@@ -33,8 +33,8 @@ export default function Process() {
               variants={fadeInUp}
               className="relative"
             >
-              <div className="font-mono text-5xl font-black text-white/5 mb-4">{step.num}</div>
-              <div className="w-full h-[1px] bg-gray-800 mb-6 relative">
+              <div className="font-mono text-5xl font-black text-white/30 mb-4 [text-shadow:0_0_14px_rgba(255,255,255,0.16)]">{step.num}</div>
+              <div className="w-full h-[1px] bg-gray-700 mb-6 relative">
                 <motion.div 
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
@@ -42,8 +42,8 @@ export default function Process() {
                   className="absolute top-0 left-0 h-full bg-matrix"
                 />
               </div>
-              <h3 className="font-mono font-bold text-white mb-2">{step.title}</h3>
-              <p className="text-sm text-gray-400 leading-relaxed font-sans">{step.desc}</p>
+              <h3 className="font-mono font-bold text-white mb-2 [text-shadow:0_0_8px_rgba(255,255,255,0.15)]">{step.title}</h3>
+              <p className="text-sm text-gray-200 leading-relaxed font-sans">{step.desc}</p>
             </motion.div>
           ))}
         </motion.div>

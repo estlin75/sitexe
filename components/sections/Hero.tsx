@@ -16,8 +16,8 @@ export default function Hero() {
         animate="visible"
         className="relative z-10 container mx-auto px-6 flex flex-col items-center text-center"
       >
-        <motion.div variants={fadeInUp} className="mb-6 inline-block">
-          <span className="font-mono text-xs md:text-sm text-cyan bg-cyan/10 border border-cyan/30 px-3 py-1 uppercase tracking-widest">
+        <motion.div variants={fadeInUp} className="mb-6 inline-block max-w-full px-4">
+          <span className="font-mono text-[10px] sm:text-xs md:text-sm text-cyan bg-cyan/10 border border-cyan/30 px-3 py-1 uppercase tracking-widest whitespace-nowrap block text-center">
             Uplink established // Connection secure
           </span>
         </motion.div>
@@ -36,7 +36,7 @@ export default function Hero() {
           variants={fadeInUp}
           className="font-mono text-gray-400 max-w-2xl text-sm md:text-base mb-10 leading-relaxed"
         >
-          // {SITE_CONFIG.tagline} <br/>
+          {"// "}{SITE_CONFIG.tagline} <br/>
           Tworzymy aplikacje internetowe – od prostych stron firmowych i wizytówek po skalowalne systemy SaaS i rozwiązania AI.
         </motion.p>
         

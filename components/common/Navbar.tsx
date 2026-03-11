@@ -60,7 +60,7 @@ export default function Navbar() {
         <nav className="hidden md:flex gap-8">
           {NAV_LINKS.map((link) => (
             <a 
-              key={link.name} 
+              key={`${link.name}-${link.href}`} 
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)} // <-- Dodany event
               className="font-mono text-sm text-gray-400 hover:text-cyan transition-colors hover:text-glow-cyan"
@@ -89,7 +89,7 @@ export default function Navbar() {
           >
             {NAV_LINKS.map((link, i) => (
               <motion.a
-                key={link.name}
+                key={`${link.name}-${link.href}`}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)} // <-- Dodany event
                 initial={{ opacity: 0, x: -20 }}
@@ -103,7 +103,7 @@ export default function Navbar() {
             ))}
             
             <div className="mt-10 font-mono text-xs text-matrix opacity-50 animate-pulse">
-              // SYSTEM.OCZEKUJE_NA_DANE_
+              {"// SYSTEM.OCZEKUJE_NA_DANE_"}
             </div>
           </motion.div>
         )}

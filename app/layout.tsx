@@ -1,5 +1,5 @@
 import "./globals.css"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { JetBrains_Mono, Inter } from "next/font/google"
 import { Toaster } from "sonner"
 import { SITE_CONFIG } from "@/lib/constants"
@@ -12,6 +12,9 @@ const fontMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
 export const metadata: Metadata = {
   title: `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`,
   description: SITE_CONFIG.description,
+}
+
+export const viewport: Viewport = {
   themeColor: "#050505",
 }
 

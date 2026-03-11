@@ -11,7 +11,7 @@ export const NAV_LINKS = [
   { name: "// USLUGI", href: "#services" },
   { name: "// TECHNOLOGIE", href: "#tech" },
   { name: "// REALIZACJE", href: "#portfolio" },
-  { name: "// TERMINAL", href: "#why-us" },
+  { name: "// KONTAKT", href: "#why-us" },
   { name: "// KONTAKT", href: "#contact" },
 ]
 

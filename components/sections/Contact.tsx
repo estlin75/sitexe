@@ -1,11 +1,9 @@
 "use client"
 import { motion } from "motion/react"
-import { useForm } from "react-hook-form" // Fix import as we requested hook-form
 import { useForm as useHookForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { toast } from "sonner"
-import NeonGlitchCTA from "../common/NeonGlitchCTA"
 import { SITE_CONFIG } from "@/lib/constants"
 
 const contactSchema = z.object({
@@ -55,8 +53,8 @@ export default function Contact() {
             viewport={{ once: true }}
             className="mb-10 text-center"
           >
-            <h2 className="font-mono text-3xl font-black text-white mb-2 uppercase">USTANÓW POŁĄCZENIE</h2>
-            <p className="font-mono text-gray-500 text-sm">Zainicjuj połączenie. Odpowiemy w 24h.</p>
+            <h2 className="font-mono text-3xl font-black text-white mb-2 uppercase">NAPISZ DO NAS PIERWSZĄ WIADOMOŚĆ</h2>
+            <p className="font-mono text-gray-500 text-sm">Napisz, czego potrzebujesz. Odpowiemy w 24h.</p>
             <p className="font-mono text-matrix text-xs mt-4">DIRECT: {SITE_CONFIG.email}</p>
           </motion.div>
 

@@ -95,7 +95,7 @@ export const PAYMENT_TERMS = {
 export const PROJECTS = [
   {
     id: 1,
-    title: "Projekt: GOOGLE_AI_STUDIO",
+    title: "Projekt: LUMINA",
     category: "Aplikacja Web",
     image: "/images/placeholder-1.jpg", // TODO: Podmień obrazki w public/images
     link: "https://my-google-ai-studio-applet-733146659897.us-west1.run.app/",

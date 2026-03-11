@@ -9,6 +9,8 @@ type WindowWithLenis = Window & {
 export default function LenisProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const isMobile = window.innerWidth < 768
+    // Na mobilnych natywny scroll jest płynny i szybki — Lenis tylko przeszkadza
+    if (isMobile) return
 
     const lenis = new Lenis({
       lerp: 0.1,

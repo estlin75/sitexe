@@ -21,7 +21,7 @@ export default function Services() {
           className="mb-16"
         >
           <h2 className="font-mono text-3xl md:text-4xl text-white font-bold">
-            <span className="text-magenta">&gt;</span> ./uruchom_uslugi.sh
+            <span className="text-magenta">&gt;</span> ./uruchom_usługi.sh
           </h2>
           <div className="w-24 h-1 bg-magenta mt-4 box-glow-magenta" />
         </motion.div>
@@ -34,8 +34,8 @@ export default function Services() {
           className="mb-8"
         >
           <div className="inline-flex items-center gap-2 hacker-border px-4 py-2">
-            <span className="font-mono text-xs text-cyan">GLOWNE</span>
-            <span className="font-mono text-xs text-gray-500">KLUCZOWE_USLUGI</span>
+            <span className="font-mono text-xs text-cyan">GŁÓWNE</span>
+            <span className="font-mono text-xs text-gray-500">KLUCZOWE_USŁUGI</span>
           </div>
         </motion.div>
 

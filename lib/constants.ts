@@ -1,17 +1,17 @@
 // TODO: Zmień na prawdziwe dane swojej firmy / agencji
 export const SITE_CONFIG = {
   name: "sitexe",
-  tagline: "Elitarne Inzynieria Web, Mobile i Aplikacji",
-  description: "Nowoczesna wizytowka agencji tworzenia stron i aplikacji",
+  tagline: "Elitarna Inżynieria Web, Mobile i Aplikacji",
+  description: "Nowoczesna wizytówka agencji tworzenia stron i aplikacji",
   email: "kontakt@sitexe.dev",
   phone: "+48 514 090 860",
 }
 
 export const NAV_LINKS = [
-  { name: "// USLUGI", href: "#services" },
+  { name: "// USŁUGI", href: "#services" },
   { name: "// TECHNOLOGIE", href: "#tech" },
   { name: "// REALIZACJE", href: "#portfolio" },
-  { name: "// KONTAKT", href: "#why-us" },
+  { name: "// DLACZEGO MY", href: "#why-us" },
   { name: "// KONTAKT", href: "#contact" },
 ]
 
@@ -22,7 +22,7 @@ export const SERVICES = [
       {
         id: "01",
         title: "Dedykowane Strony Internetowe",
-        description: "Projektowanie i wdrazanie stron internetowych na zamowienie, tworzonych od zera pod konkretne cele biznesowe klienta.",
+        description: "Projektowanie i wdrażanie stron internetowych na zamówienie, tworzonych od zera pod konkretne cele biznesowe klienta.",
         icon: "Globe",
       },
       {
@@ -38,26 +38,26 @@ export const SERVICES = [
     items: [
       {
         id: "03",
-        title: "Integracje Platnosci",
-        description: "Implementacja prostych i bezpiecznych systemow platnosci bezposrednio na stronie lub w aplikacji.",
+        title: "Integracje Płatności",
+        description: "Implementacja prostych i bezpiecznych systemów płatności bezpośrednio na stronie lub w aplikacji.",
         icon: "CreditCard",
       },
       {
         id: "04",
         title: "Bazy Danych",
-        description: "Projektowanie i konfiguracja baz danych gwarantujacych stabilny przeplyw informacji i gotowosc do skalowania.",
+        description: "Projektowanie i konfiguracja baz danych gwarantujących stabilny przepływ informacji i gotowość do skalowania.",
         icon: "Database",
       },
       {
         id: "05",
         title: "Hosting i Domeny",
-        description: "Kompleksowa obsluga hostingu i domen, od konfiguracji po uruchomienie srodowiska produkcyjnego.",
+        description: "Kompleksowa obsługa hostingu i domen, od konfiguracji po uruchomienie środowiska produkcyjnego.",
         icon: "Server",
       },
       {
         id: "06",
         title: "Design Pod Klienta",
-        description: "Warstwa wizualna i UX przygotowywane w pelnej zgodnosci z preferencjami klienta i charakterem marki.",
+        description: "Warstwa wizualna i UX przygotowywane w pełnej zgodności z preferencjami klienta i charakterem marki.",
         icon: "Palette",
       },
     ],
@@ -67,29 +67,29 @@ export const SERVICES = [
 export const PROCESS_STEPS = [
   {
     num: "01",
-    title: "ZEBRANIE_WYMAGAN",
-    desc: "Klient opisuje potrzeby, oczekiwany wyglad projektu, przesyla inspiracje oraz komplet niezbednych danych.",
+    title: "ZEBRANIE_WYMAGAŃ",
+    desc: "Klient opisuje potrzeby, oczekiwany wygląd projektu, przesyła inspiracje oraz komplet niezbędnych danych.",
   },
   {
     num: "02",
     title: "SZYBKIE_PRZYGOTOWANIE",
-    desc: "W ciagu kilku dni wracamy z gotowym projektem opartym o uzgodnione wymagania i cele wdrozeniowe.",
+    desc: "W ciągu kilku dni wracamy z gotowym projektem opartym o uzgodnione wymagania i cele wdrożeniowe.",
   },
   {
     num: "03",
-    title: "WDROZENIE_I_AKCEPTACJA",
-    desc: "Prezentujemy finalny efekt, dopracowujemy szczegoly i finalizujemy projekt po pelnej akceptacji klienta.",
+    title: "WDROŻENIE_I_AKCEPTACJA",
+    desc: "Prezentujemy finalny efekt, dopracowujemy szczegóły i finalizujemy projekt po pełnej akceptacji klienta.",
   },
   {
     num: "04",
-    title: "STALE_WSPARCIE_ZMIAN",
-    desc: "Po realizacji klient ma staly kanal kontaktu i moze zlecac kolejne modyfikacje w dowolnym momencie.",
+    title: "STAŁE_WSPARCIE_ZMIAN",
+    desc: "Po realizacji klient ma stały kanał kontaktu i może zlecać kolejne modyfikacje w dowolnym momencie.",
   },
 ]
 
 export const PAYMENT_TERMS = {
   upfront: "20% na start",
-  final: "80% po realizacji i pelnej akceptacji",
+  final: "80% po realizacji i pełnej akceptacji",
 }
 
 export const PROJECTS = [

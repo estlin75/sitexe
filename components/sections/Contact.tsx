@@ -8,7 +8,7 @@ import { SITE_CONFIG } from "@/lib/constants"
 
 const contactSchema = z.object({
   email: z.string().email("Niepoprawny format adresu e-mail."),
-  message: z.string().min(10, "Wiadomosc musi miec minimum 10 znakow."),
+  message: z.string().min(10, "Wiadomość musi mieć minimum 10 znaków."),
 })
 
 type ContactFormValues = z.infer<typeof contactSchema>
@@ -30,12 +30,12 @@ export default function Contact() {
       if (!response.ok) throw new Error("API Error");
 
       // Komunikat o sukcesie
-      toast.success("TRANSMISJA_ZAKONCZONA. Odezwiemy sie wkrotce.");
+      toast.success("TRANSMISJA_ZAKOŃCZONA. Odezwiemy się wkrótce.");
       reset(); 
       
     } catch (error) {
       // Komunikat o błędzie (np. jak podasz złe hasło w .env)
-      toast.error("BLAD: UTRACONO_POLACZENIE. Sprawdz konsole.");
+      toast.error("BŁĄD: UTRACONO_POŁĄCZENIE. Sprawdź konsolę.");
       console.error(error);
     }
   }
@@ -64,7 +64,7 @@ export default function Contact() {
               <input 
                 {...register("email")}
                 className="w-full bg-black border border-gray-800 focus:border-matrix focus:ring-1 focus:ring-matrix outline-none p-3 font-mono text-sm text-white transition-all"
-                placeholder="twoj@email.pl"
+                placeholder="twój@email.pl"
               />
               {errors.email && <p className="text-red-500 font-mono text-xs mt-1">{errors.email.message}</p>}
             </div>
@@ -75,7 +75,7 @@ export default function Contact() {
                 {...register("message")}
                 rows={4}
                 className="w-full bg-black border border-gray-800 focus:border-matrix focus:ring-1 focus:ring-matrix outline-none p-3 font-mono text-sm text-white transition-all resize-none"
-                placeholder="Opisz czego potrzebujesz i jak ma wygladac projekt..."
+                placeholder="Opisz czego potrzebujesz i jak ma wyglądać projekt..."
               />
               {errors.message && <p className="text-red-500 font-mono text-xs mt-1">{errors.message.message}</p>}
             </div>
@@ -86,7 +86,7 @@ export default function Contact() {
                 disabled={isSubmitting}
                 className={`w-full py-4 font-mono font-bold uppercase tracking-widest transition-all ${isSubmitting ? 'bg-gray-800 text-gray-500 cursor-not-allowed' : 'cursor-pointer border border-matrix text-matrix hover:bg-matrix hover:text-black shadow-[0_0_15px_rgba(0,255,159,0.2)]'}`}
               >
-                {isSubmitting ? 'SZYFROWANIE_DANYCH...' : 'WYSLIJ_WIADOMOSC'}
+                {isSubmitting ? 'SZYFROWANIE_DANYCH...' : 'WYŚLIJ_WIADOMOŚĆ'}
               </button>
             </div>
           </form>

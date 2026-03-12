@@ -3,20 +3,20 @@ import { motion } from "motion/react"
 
 const WHY_US_POINTS = [
   {
-    title: "1. ZERO_SCHEMATOW",
-    description: "Dostarczamy czysty i zoptymalizowany kod. Bez gotowych szablonow, tylko wydajne rozwiazania tworzone pod klienta.",
+    title: "1. ZERO_SCHEMATÓW",
+    description: "Dostarczamy czysty i zoptymalizowany kod. Bez gotowych szablonów, tylko wydajne rozwiązania tworzone pod klienta.",
   },
   {
     title: "2. SPRAWNA_REALIZACJA",
-    description: "Pracujemy szybko i metodycznie, dlatego dostarczamy projekty w krotkim czasie bez kompromisow dla jakosci.",
+    description: "Pracujemy szybko i metodycznie, dlatego dostarczamy projekty w krótkim czasie bez kompromisów dla jakości.",
   },
   {
-    title: "3. STABILNOSC_I_BEZPIECZENSTWO",
-    description: "Nasze strony i aplikacje wdrazamy zgodnie z aktualnymi standardami bezpieczenstwa i praktykami produkcyjnymi.",
+    title: "3. STABILNOŚĆ_I_BEZPIECZEŃSTWO",
+    description: "Nasze strony i aplikacje wdrażamy zgodnie z aktualnymi standardami bezpieczeństwa i praktykami produkcyjnymi.",
   },
   {
-    title: "4. PELNA_KOMUNIKACJA",
-    description: "Jestes na biezaco z kazdym krokiem realizacji. Otwarty kanal kontaktu, regularne aktualizacje i bezposredni dostep do zespolu.",
+    title: "4. PEŁNA_KOMUNIKACJA",
+    description: "Jesteś na bieżąco z każdym krokiem realizacji. Otwarty kanał kontaktu, regularne aktualizacje i bezpośredni dostęp do zespołu.",
   },
 ]
 

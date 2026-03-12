@@ -15,7 +15,7 @@ export default function Process() {
           className="mb-16 text-center"
         >
           <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl text-white font-bold mb-4 whitespace-nowrap [text-shadow:0_0_10px_rgba(255,255,255,0.22)]">
-            [ PRZEBIEG_WSPOLPRACY ]
+            [ PRZEBIEG_WSPÓŁPRACY ]
           </h2>
           <p className="font-mono text-gray-300 text-sm">Protokół realizacji projektów zdefiniowany krok po kroku.</p>
         </motion.div>
@@ -56,14 +56,14 @@ export default function Process() {
           className="mt-14"
         >
           <div className="hacker-border box-glow-cyan bg-cyan/5 p-6 md:p-8">
-            <div className="font-mono text-xs text-cyan mb-3">[ BEZPIECZNY_MODEL_PLATNOSCI ]</div>
+            <div className="font-mono text-xs text-cyan mb-3">[ BEZPIECZNY_MODEL_PŁATNOŚCI ]</div>
             <div className="font-mono text-2xl md:text-3xl font-bold text-white leading-tight">
               {PAYMENT_TERMS.upfront}
               <span className="text-cyan"> / </span>
               {PAYMENT_TERMS.final}
             </div>
             <p className="mt-4 text-sm text-gray-300 font-mono">
-              Transparentny model rozliczenia: start projektu jest aktywowany po 20%, a finalna platnosc nastepuje dopiero po pelnej akceptacji.
+              Transparentny model rozliczenia: start projektu jest aktywowany po 20%, a finalna płatność następuje dopiero po pełnej akceptacji.
             </p>
           </div>
         </motion.div>

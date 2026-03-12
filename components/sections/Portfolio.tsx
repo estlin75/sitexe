@@ -69,7 +69,6 @@ function PortfolioCard({
       <div className="absolute bottom-0 left-0 p-8 z-20 w-full">
         <div className="flex justify-between items-end">
           <div>
-            <div className="font-mono text-cyan text-xs mb-2">[{project.category}]</div>
             <h3 className="font-bold text-2xl text-white group-hover:text-glow-cyan transition-all">{project.title}</h3>
           </div>
           <div className="font-mono text-matrix opacity-0 group-hover:opacity-100 transition-opacity">[ OTWORZ ]</div>

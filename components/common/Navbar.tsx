@@ -1,4 +1,6 @@
 "use client"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants"
@@ -8,6 +10,7 @@ type WindowWithLenis = Window & {
 }
 
 export default function Navbar() {
+  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [lenis, setLenis] = useState<any>(null)
@@ -50,6 +53,24 @@ export default function Navbar() {
     setIsOpen(false);
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setIsOpen(false)
+
+    if (pathname === "/") {
+      e.preventDefault()
+
+      if (lenis) {
+        lenis.scrollTo(0, {
+          duration: 1.2,
+          easing: (t: number) => 1 - Math.pow(1 - t, 3),
+          immediate: false,
+        })
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      }
+    }
+  }
+
   return (
     <motion.header 
       initial={{ y: -100 }}
@@ -59,10 +80,15 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center relative z-50">
-        <div className="font-mono text-xl font-bold text-white tracking-tighter">
+        <Link
+          href="/"
+          onClick={handleLogoClick}
+          className="font-mono text-xl font-bold text-white tracking-tighter"
+          aria-label="Przejdz do strony glownej"
+        >
           <span className="text-matrix">{"{"}</span> {SITE_CONFIG.name} <span className="text-matrix">{"}"}</span>
           <span className="animate-pulse text-matrix">_</span>
-        </div>
+        </Link>
         
         <nav className="hidden md:flex gap-8">
           {NAV_LINKS.map((link) => (

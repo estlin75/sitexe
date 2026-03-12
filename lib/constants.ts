@@ -1,8 +1,9 @@
 // TODO: Zmień na prawdziwe dane swojej firmy / agencji
 export const SITE_CONFIG = {
   name: "sitexe",
-  tagline: "Elitarna Inżynieria Web, Mobile i Aplikacji",
-  description: "Nowoczesna wizytówka agencji tworzenia stron i aplikacji",
+  tagline: "Elitarna inżynieria webu, mobile i aplikacji",
+  description: "Tworzymy strony internetowe oraz aplikacje webowe i mobilne.",
+  url: "https://www.sitexe.dev",
   email: "kontakt@sitexe.dev",
   phone: "+48 514 090 860",
 }

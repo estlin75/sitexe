@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     title: `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`,
     description: SITE_CONFIG.description,
   },
+  icons: {
+    icon: "/favicon.png",
+  },
 }
 
 export const viewport: Viewport = {
